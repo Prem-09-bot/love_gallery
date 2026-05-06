@@ -13,7 +13,7 @@ function Gallery() {
 
   // Fetch images
   const fetchImages = async () => {
-    const res = await axios.get("http://localhost:5000/api/photos", {
+    const res = await axios.get("https://love-gallery-oz0o.onrender.com/api/photos", {
       headers: { Authorization: token }
     });
     setImages(res.data);
@@ -32,7 +32,7 @@ function Gallery() {
     formData.append("caption", caption);
 
     await axios.post(
-      "http://localhost:5000/api/photos/upload",
+      "https://love-gallery-oz0o.onrender.com/api/photos/upload",
       formData,
       { headers: { Authorization: token } }
     );
@@ -45,7 +45,7 @@ function Gallery() {
   // Delete image
   const deleteImage = async (img) => {
     await axios.delete(
-      `http://localhost:5000/api/photos/${img}`,
+      `https://love-gallery-oz0o.onrender.com/api/photos/${img}`,
       { headers: { Authorization: token } }
     );
 
